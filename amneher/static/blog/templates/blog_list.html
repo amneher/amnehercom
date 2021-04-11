@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/static/img/post-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Andrew's Blog</h1>
+            <span class="subheading">A Blog of Stories, Tech, and Projects.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for post in posts %}
+        <div class="post-preview">
+          <a href={% url 'post_detail' post.id %}>
+            <h2 class="post-title">
+              {{ post.data.title }}
+            </h2>
+            <h3 class="post-subtitle">
+              {{ post.data.author }}
+            </h3>
+          </a>
+          <p class="post-meta">
+            Posted: {{ post.data.created }}
+          </p>
+          <p class="post-meta">
+            Updated: {{ post.data.updated }}
+          </p>
+        </div>
+        <hr>
+        
+        {% endfor %}
+        <!-- Pager -->
+<!--         <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+{% endblock %}
