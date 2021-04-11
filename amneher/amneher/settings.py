@@ -87,10 +87,10 @@ DATABASES = {
     # },
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'amnehercom',
-        'HOST': 'localhost',
-        'USER': 'blog',
-        'PASSWORD': secrets.DB_PASS,
+        'NAME': 'amneher_db',
+        'HOST': 'amneher-db1.ckeworkiu3w7.us-west-2.rds.amazonaws.com',
+        'USER': 'amneher',
+        'PASSWORD': secrets.RDS_PASS,
         'PORT': '5432',
     },
 }
@@ -142,3 +142,12 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# =============================================================================
+# Failed Login Protection
+#
+# https://github.com/jazzband/django-axes
+# -----------------------------------------------------------------------------
+AXES_FAILURE_LIMIT = 12
+AXES_COOLOFF_TIME = datetime.timedelta(minutes=15)
+AXES_LOCKOUT_TEMPLATE = 'admin/login.html'
+AXES_ONLY_USER_FAILURES = True
