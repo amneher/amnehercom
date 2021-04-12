@@ -1,3 +1,5 @@
+-e .
+
 asgiref==3.3.3
 beautifulsoup4==4.9.3
 bleach==3.3.0
