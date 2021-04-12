@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import datetime
 from pathlib import Path
 from . import secrets
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +28,7 @@ DEBUG = True
 
 SITE_URL = "https://amneher.com"
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "www.amneher.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "amneher.com", "www.amneher.com"]
 
 AUTH_USER_MODEL = 'blog.User'
 
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'main',
     'blog',
+    'amneher',
 ]
 
 MIDDLEWARE = [
@@ -88,10 +90,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'amneher_db',
-        'HOST': 'amneher-db1.ckeworkiu3w7.us-west-2.rds.amazonaws.com',
+        'HOST': 'amnehercom.ckeworkiu3w7.us-west-2.rds.amazonaws.com',
         'USER': 'amneher',
         'PASSWORD': secrets.RDS_PASS,
-        'PORT': '5432',
+        'PORT': '2112',
     },
 }
 
