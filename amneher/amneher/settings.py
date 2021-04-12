@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import datetime
 from . import secrets
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ DEBUG = True
 
 SITE_URL = "https://amneher.com"
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "www.amneher.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "amneher.com", "www.amneher.com"]
 
 AUTH_USER_MODEL = 'blog.User'
 
@@ -42,8 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'markdownfield',
     'bootstrap4',
-    'main',
-    'blog',
+    'amneher.main',
+    'amneher.blog',
+    'amneher.amneher',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'amneher.urls'
+ROOT_URLCONF = 'amneher.amneher.urls'
 
 TEMPLATES = [
     {
@@ -91,7 +93,7 @@ DATABASES = {
         'HOST': 'amneher-db1.ckeworkiu3w7.us-west-2.rds.amazonaws.com',
         'USER': 'amneher',
         'PASSWORD': secrets.RDS_PASS,
-        'PORT': '5432',
+        'PORT': '2112',
     },
 }
 
