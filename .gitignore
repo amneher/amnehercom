@@ -1,0 +1,11 @@
+db.*
+.ve
+amneher/amneher/__pycache__
+amneher/blog/__pycache__
+amneher/main/__pycache__
+amneher/amneher/secrets.py
+amneher/static/vendor
+src/static
+sundry
+src/amneher.egg-info
+
